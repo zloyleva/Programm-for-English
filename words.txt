@@ -1,0 +1,14 @@
+source,источник
+execute,выполнять
+capable,способный
+almost,почти
+enough,достаточно
+core,ядро
+the busiest,самый занятой
+degree,степень градус
+required,обязательный
+depth,глубина
+numerous,многочисленные
+compatible,совместимый
+available,доступный
+forget,забывать
