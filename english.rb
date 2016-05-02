@@ -1,18 +1,24 @@
 #encoding: cp866
 #Русско-английский словарь
-words_array = []
-input = File.open("words.txt", "r")
-while (line = input.gets)
-	words_array << line.strip.split(",")
+@answer_true = 0.00
+@answer_all = 0.00
+def read_file
+	@words_array = []
+	input = File.open("words.txt", "r")
+	while (line = input.gets)
+		@words_array << line.strip.split(",")
+	end
+	input.close
 end
-input.close
+def get_new_word
+	number_ru = rand(0..@words_array.size)
+	@words_array[number_ru][1]
+end
 
-puts "Количество слов в словаре : #{words_array.size}"
-answer_true = 0.00
-answer_all = 0.00
+require 'sinatra'
 
-while true
-	number_ru = rand(0..words_array.size)
-	print "Введите слово '#{words_array[number_ru][1]}' на английском или нажмите Enter для выхода: "
-	user_word = gets.strip
+get '/' do
+	read_file
+	@count_words = @words_array.size #Количество слов в словаре
+	erb :index
 end
